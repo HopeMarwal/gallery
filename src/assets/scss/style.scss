@@ -1,0 +1,121 @@
+//header font
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+//variables
+$header-font: 'Great Vibes', cursive;
+
+.app {
+  max-width: 960px;
+  margin: auto;
+}
+
+.header {
+  width: 100%;
+  padding: 70px 0;
+  text-align: center;
+  font-family: $header-font;
+  font-size: 70px;
+  color: rgb(251, 136, 136);
+}
+
+.search {
+  max-width: 450px;
+  margin: auto;
+  display: flex;
+  margin-bottom: 20px;
+
+  &-input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background: rgba(214, 214, 214, 0.331);
+    border: 2px solid rgb(205, 205, 205);
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+  }
+
+  &-btn {
+    padding: 0 15px;
+    border-radius: 0 5px 5px 0;
+    font-size: 20px;
+    background: rgba(251, 136, 136, 0.739);
+    color: #fff;
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+  }
+}
+
+.buttons {
+  max-width: 450px;
+  margin: auto;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+
+  .btn {
+    background: rgba(251, 136, 136, 0.797);
+    color: #fff;
+    border-radius: 5px;
+    padding: 8px 25px;
+    width: 100px;
+    font-size: 16px;
+    font-weight: 300;
+  }
+}
+
+.gallery {
+  padding: 0 10px;
+
+  .title {
+    text-align: center;
+    font-size: 35px;
+    font-family: $header-font;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+    margin-bottom: 40px;
+    text-transform: capitalize;
+  }
+
+  &-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto, 170px);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+  }
+
+  .not_found {
+    font-size: 20px;
+    text-align: center;
+
+    span {
+      font-weight: 600;
+    }
+  }
+
+  .image {
+    background: rgba(0, 0, 0, 0.123);
+    min-height: 170px;
+    overflow: hidden;
+
+    .img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      transform: scale(1);
+      transition: all 1s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+  }
+
+  .image:nth-child(1) {
+    grid-column: 1 / span 1;
+    grid-row: 1 / 3;
+  }
+}
